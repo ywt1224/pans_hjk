@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.25)#设置cmake要求最小版本
 
 #这几个能看出来是设置对应的编译器位置，事实上去对应的/usr/bin 目录也能看到对应确实有这两个
 #TODO 但是后面的那个 CACHE FILEPATH 是干啥的呢
 #其它的set是不是也能这么设置
 set(CMAKE_C_COMPILER "/usr/bin/gcc" CACHE FILEPATH "C compiler" FORCE)
-set(CMAKE_CXX_COMPILER "/usr/bin/gcc" CACHE FILEPATH "C++ compiler" FORCE)
+set(CMAKE_CXX_COMPILER "/usr/bin/g++" CACHE FILEPATH "C++ compiler" FORCE)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
