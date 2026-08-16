@@ -32,6 +32,7 @@ foreach(TEST_SOURCE IN LISTS PANS_TEST_SOURCES)
         #设置所有的可用生成类型的输出目录都为原来指定的那个
         set_target_properties("${TEST_NAME}" PROPERTIES
             "RUNTIME_OUTPUT_DIRECTORY_${CONFIG_UPPER}" "${PANS_TEST_OUTPUT_DIRECTORY}"
+            # RUNTIME_OUTPUT_DIRECTORY "${PANS_TEST_OUTPUT_DIRECTORY}"
         )   
     endforeach()
     
