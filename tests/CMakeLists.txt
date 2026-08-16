@@ -26,6 +26,11 @@ foreach(TEST_SOURCE IN LISTS PANS_TEST_SOURCES)
     # pans 的 PUBLIC 依赖会让测试同时继承头文件路径和 pans_options。
     target_link_libraries("${TEST_NAME}" PRIVATE pans Threads::Threads)
     
+    # 为单配置生成器单独配置输出目录（因为需要设置的宏不一样）
+    set_target_properties("${TEST_NAME}" PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${PANS_TEST_OUTPUT_DIRECTORY}"
+    )
+    
     # 多配置生成器的可用生成类型，默认会追加 Debug/Release 子目录，这里保持输出路径一致。
     foreach(CONFIG IN LISTS CMAKE_CONFIGURATION_TYPES)
         string(TOUPPER "${CONFIG}" CONFIG_UPPER)
