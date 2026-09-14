@@ -45,3 +45,5 @@ foreach(TEST_SOURCE IN LISTS PANS_TEST_SOURCES)
     #可执行对象会自动替换为构建时创建的可执行文件的位置
     add_test(NAME "${TEST_NAME}" COMMAND "${TEST_NAME}")
 endforeach()
+
+add_subdirectory(inner_tests)
