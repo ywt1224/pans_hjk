@@ -5,7 +5,7 @@
 
 namespace pans::detail {//相当于pans命名空间里面再套了一层detail
 
-inline constexpr std::size_t LOG_MESSAGE_INLINE_CAPACITY = 2048;
+inline constexpr std::size_t LOG_MESSAGE_INLINE_CAPACITY = 128;
 
 inline constexpr std::size_t PRINTF_FORMAT_INLINE_CAPACITY = 128;
 
