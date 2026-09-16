@@ -10,7 +10,7 @@ LogLevel::ToString(Level level) noexcept
 {
         switch (level)
         {
-#define XX(name) case Level::LOG_LV_##name: return #name;
+#define XX(name) case Level::LOG_LV_##name: return #name;//这种宏定义取消重复写法的思路，倒是可以学一下，挺好看的
         XX(DEBUG)
         XX(INFO)
         XX(WARN)
