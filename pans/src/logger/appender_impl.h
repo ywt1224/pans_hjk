@@ -34,7 +34,7 @@ private:
 namespace detail {
 
 class AppenderAccess final
-{//这就是给外部用的能访问 Appender 内部实现的权限了，全是静态函数
+{//这就是给非Appender用的能访问 Appender 内部实现的权限了，全是静态函数
 public:
     [[nodiscard]] static AppenderPtr MakeStdoutAppender();
     [[nodiscard]] static AppenderPtr MakeFileAppender(std::string file_name);
