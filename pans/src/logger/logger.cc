@@ -266,6 +266,7 @@ public:
     [[nodiscard]] LoggerPtr getLogger(std::string_view name)
     {
         ASSERT_RETVAL2(!name.empty(), nullptr, "logger name cannot be empty");
+        std::lock_guard<std::mutex> lock(m_mutex);
         const auto iterator = m_loggers.find(std::string(name));
         if(iterator != m_loggers.end())
         {
