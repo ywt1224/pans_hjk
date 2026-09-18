@@ -79,8 +79,8 @@ private:
 //这个类的作用，现在还看的不是很明白，其实也就是看一下重载的两个函数有什么作用
 template <std::size_t INLINE_CAPACITY>
 class SmallStreamBuffer final : public std::streambuf
-{
-public:
+{//它的作用就是兼容 ostream 生态，然后能给继续使用 流式输出接口，
+public://后面的使用都是std::ostream m_stream; m_stream(&SmallStreamBuffer);
     explicit SmallStreamBuffer(InlineBuffer<INLINE_CAPACITY>& buffer) noexcept
         : m_buffer(buffer)
     {
